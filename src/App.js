@@ -25,11 +25,13 @@ export default function App() {
   return (
     <div className="steps">
       <div className="numbers">
-        <div className={`${curState === 1 ? "active" : ""}`}>1</div>
-        <div className={`${curState === 2 ? "active" : ""}`}>2</div>
-        <div className={`${curState === 3 ? "active" : ""}`}>3</div>
+        <div className={`${curState >= 1 ? "active" : ""}`}>1</div>
+        <div className={`${curState >= 2 ? "active" : ""}`}>2</div>
+        <div className={`${curState >= 3 ? "active" : ""}`}>3</div>
       </div>
-      <p className="message">{message}</p>
+      <p className="message">
+        Step {curState}: {message}
+      </p>
       <div className="buttons">
         <button
           onClick={prevStep}
