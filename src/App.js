@@ -12,12 +12,12 @@ export default function App() {
   useEffect(() => {
     setMessage(messages[curState - 1]);
   }, [curState]);
-  const nextStep = () => {
+  const handleNext = () => {
     if (curState === 3) return;
     setCurState((prevState) => prevState + 1);
     console.log("current state", curState);
   };
-  const prevStep = () => {
+  const handlePrev = () => {
     if (curState === 1) return;
     setCurState((prevState) => prevState - 1);
     console.log("current state", curState);
@@ -34,13 +34,13 @@ export default function App() {
       </p>
       <div className="buttons">
         <button
-          onClick={prevStep}
+          onClick={handlePrev}
           style={{ backgroundColor: "#7950f2", color: "#fff" }}
         >
           Previous
         </button>
         <button
-          onClick={nextStep}
+          onClick={handleNext}
           style={{ backgroundColor: "#7950f2", color: "#fff" }}
         >
           Next
